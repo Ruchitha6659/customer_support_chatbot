@@ -4,12 +4,11 @@
 
 # %%
 from langchain_community.document_loaders import Docx2txtLoader 
-loader1=Docx2txtLoader(r"C:\Users\RUCHITHA\OneDrive\Desktop\projects\customer_support_chatbot\HP_docs\Pavilion_15\user_guide.docx")
-docs1=loader1.load()
-loader2=Docx2txtLoader(r"C:\Users\RUCHITHA\OneDrive\Desktop\projects\customer_support_chatbot\HP_docs\Pavilion_15\setup_instructions.docx")
-docs2=loader2.load()
-loader3=Docx2txtLoader(r"C:\Users\RUCHITHA\OneDrive\Desktop\projects\customer_support_chatbot\HP_docs\Pavilion_15\maintainance_service_guide.docx")
-docs3=loader3.load()
+loader1 = Docx2txtLoader("HP_docs/Pavilion_15/user_guide.docx")
+
+loader2 = Docx2txtLoader("HP_docs/Pavilion_15/setup_instructions.docx")
+
+loader3 = Docx2txtLoader("HP_docs/Pavilion_15/maintainaince_service_guide.docx")
 
 all_documents=docs1+docs2+docs3
 len(all_documents)
