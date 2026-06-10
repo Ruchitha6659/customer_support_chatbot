@@ -9,3 +9,6 @@ langchain-groq
 chromadb==0.5.3
 sentence-transformers
 langchain-community
+docx2txt
+pypdf
+python-docx
