@@ -8,7 +8,7 @@ loader1 = Docx2txtLoader("HP_docs/Pavilion_15/user_guide.docx")
 
 loader2 = Docx2txtLoader("HP_docs/Pavilion_15/setup_instructions.docx")
 
-loader3 = Docx2txtLoader("HP_docs/Pavilion_15/maintainaince_service_guide.docx")
+loader3 = Docx2txtLoader("HP_docs/Pavilion_15/maintainance_service_guide.docx")
 
 all_documents=docs1+docs2+docs3
 len(all_documents)
