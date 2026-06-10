@@ -3,15 +3,20 @@
 # 
 
 # %%
-from langchain_community.document_loaders import Docx2txtLoader 
+from langchain_community.document_loaders import Docx2txtLoader
+
 loader1 = Docx2txtLoader("HP_docs/Pavilion_15/user_guide.docx")
+docs1 = loader1.load()
 
 loader2 = Docx2txtLoader("HP_docs/Pavilion_15/setup_instructions.docx")
+docs2 = loader2.load()
 
 loader3 = Docx2txtLoader("HP_docs/Pavilion_15/maintainance_service_guide.docx")
+docs3 = loader3.load()
 
-all_documents=docs1+docs2+docs3
-len(all_documents)
+all_documents = docs1 + docs2 + docs3
+
+print(f"Total documents: {len(all_documents)}")
 
 # %%
 len(docs1)
