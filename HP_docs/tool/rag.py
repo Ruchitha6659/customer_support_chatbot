@@ -11,7 +11,7 @@ load_dotenv()
 ### configuration
 VECTORSTORE_DIR = Path(__file__).parent / "resources/vectorstore"
 COLLECTION_NAME = "hp_laptop"
-EMBEDDING_MODEL = "Alibaba-NLP/gte-base-en-v1.5"
+EMBEDDING_MODEL = "sentence-transformers/all-MiniLM-L6-v2"
 
 ## global objects
 vector_store = None
