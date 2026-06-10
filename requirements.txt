@@ -9,5 +9,5 @@ sentence-transformers==2.2.2
 docx2txt
 pypdf
 python-docx
-protobuf==4.25.3
+protobuf==3.20.3
 watchdog==3.0.0
