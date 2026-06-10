@@ -3,6 +3,12 @@
 # 
 
 # %%
+import streamlit as st
+
+st.title("Customer Support Chatbot")
+
+st.write("App Started Successfully")
+
 from langchain_community.document_loaders import Docx2txtLoader
 
 loader1 = Docx2txtLoader("HP_docs/Pavilion_15/user_guide.docx")
