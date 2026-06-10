@@ -12,3 +12,4 @@ langchain-community
 docx2txt
 pypdf
 python-docx
+protobuf==4.25.3
