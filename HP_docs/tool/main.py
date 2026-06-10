@@ -1,5 +1,5 @@
 import streamlit as st
-from HP_docs.tool.rag import initialize_system, generate_answer
+from rag import initialize_system, generate_answer
 
 st.title("HP Laptop Customer Support Chatbot")
 
