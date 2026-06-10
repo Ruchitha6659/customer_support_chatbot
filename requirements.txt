@@ -1,7 +1,7 @@
 ﻿uvicorn
 gunicorn
 fastapi
-streamlit
+streamlit==1.32.0
 python-dotenv
 langchain-chroma
 langchain-huggingface
