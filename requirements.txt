@@ -5,7 +5,8 @@ langchain-community
 langchain-huggingface
 langchain-groq
 chromadb==0.5.3
-sentence-transformers==2.2.2
+sentence-transformers
+torch
 docx2txt
 pypdf
 python-docx
