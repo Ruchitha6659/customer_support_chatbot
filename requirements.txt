@@ -1,4 +1,4 @@
-streamlit==1.28.0
+streamlit
 python-dotenv
 langchain-chroma
 langchain-community
@@ -10,5 +10,4 @@ torch
 docx2txt
 pypdf
 python-docx
-protobuf==3.20.3
 watchdog==3.0.0
