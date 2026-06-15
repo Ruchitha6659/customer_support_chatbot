@@ -54,7 +54,7 @@ def generate_answer(query):
     # Filter relevant documents
     relevant_docs = [
         doc for doc, score in docs
-        if score >= 0.7
+        if score >= 0.4
     ]
 
     if not relevant_docs:
