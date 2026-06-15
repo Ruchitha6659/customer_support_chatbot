@@ -5,12 +5,13 @@ python-dotenv
 langchain==0.2.16
 langchain-community==0.2.16
 langchain-chroma==0.2.0
-langchain-huggingface
-langchain-groq
+langchain-huggingface==0.0.3
+langchain-groq==0.1.9
 
-chromadb==0.5.8
+chromadb==0.5.5
 
 sentence-transformers
+--extra-index-url https://download.pytorch.org/whl/cpu
 torch
 
 docx2txt
