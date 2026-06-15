@@ -1,4 +1,5 @@
 streamlit
+supabase
 python-dotenv
 langchain-chroma
 langchain-community
