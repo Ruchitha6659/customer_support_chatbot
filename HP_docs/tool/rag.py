@@ -35,16 +35,14 @@ def initialize_system():
 
     print("Loading vector database...")
 
-    try:
-        vector_store = Chroma(
-            collection_name=COLLECTION_NAME,
-            embedding_function=embedding_function,
-            persist_directory=str(VECTORSTORE_DIR)
-        )
-    except Exception as e:
-        print(f"Vector store error: {e}")
-        traceback.print_exc()
-        raise
+   try:
+    vector_store = Chroma(
+        collection_name=COLLECTION_NAME,
+        embedding_function=embedding_function,
+        persist_directory=str(VECTORSTORE_DIR)
+    )
+except Exception:
+    raise RuntimeError(traceback.format_exc())
 
     print("Initializing LLM...")
 
