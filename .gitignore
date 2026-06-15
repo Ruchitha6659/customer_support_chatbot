@@ -36,3 +36,6 @@ Thumbs.db
 dist/
 build/
 *.egg-info/
+HP_docs/tool/resources/vectorstore/
+
+*.sqlite3
