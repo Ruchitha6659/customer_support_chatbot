@@ -21,13 +21,20 @@ llm = None
 def initialize_system():
     global vector_store, embedding_function, llm
 
-    print("Initializing embedding model...")
-    embedding_function = HuggingFaceEmbeddings(
-        model_name=EMBEDDING_MODEL,
-        model_kwargs={"device": "cpu"},
-        encode_kwargs={"normalize_embeddings": False}
-    )
+  import traceback
 
+print("Loading vector database...")
+
+try:
+    vector_store = Chroma(
+        collection_name=COLLECTION_NAME,
+        embedding_function=embedding_function,
+        persist_directory=str(VECTORSTORE_DIR)
+    )
+except Exception as e:
+    print(f"Vector store error: {e}")
+    traceback.print_exc()
+    raise
     print("Loading vector database...")
     vector_store = Chroma(
         collection_name=COLLECTION_NAME,
