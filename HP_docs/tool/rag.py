@@ -7,7 +7,6 @@ from langchain_groq import ChatGroq
 from langchain_core.messages import HumanMessage, SystemMessage
 
 import os
-import traceback
 
 os.environ["TOKENIZERS_PARALLELISM"] = "false"
 
@@ -35,14 +34,11 @@ def initialize_system():
 
     print("Loading vector database...")
 
-   try:
     vector_store = Chroma(
         collection_name=COLLECTION_NAME,
         embedding_function=embedding_function,
         persist_directory=str(VECTORSTORE_DIR)
     )
-except Exception:
-    raise RuntimeError(traceback.format_exc())
 
     print("Initializing LLM...")
 
@@ -60,33 +56,16 @@ def generate_answer(query):
     if vector_store is None:
         raise RuntimeError("Vector database not initialized")
 
-    docs = vector_store.similarity_search_with_relevance_scores(
-        query,
-        k=3
-    )
-
-    print(f"\nQuestion: {query}")
-    print(f"Retrieved {len(docs)} documents")
-
-    relevant_docs = [
-        doc for doc, score in docs
-        if score >= 0.4
-    ]
-
-    if not relevant_docs:
-        return (
-            "I can only assist with HP laptop-related questions.",
-            []
-        )
+    docs = vector_store.similarity_search(query, k=3)
 
     context = "\n\n".join(
-        [doc.page_content for doc in relevant_docs]
+        doc.page_content for doc in docs
     )
 
     sources = list(
         set(
             doc.metadata.get("source", "Unknown")
-            for doc in relevant_docs
+            for doc in docs
         )
     )
 
@@ -95,9 +74,9 @@ def generate_answer(query):
             content=f"""
 You are an HP Laptop Customer Support Assistant.
 
-Answer ONLY using the information provided in the context below.
+Answer ONLY using the provided context.
 
-If the answer is not available in the context, reply exactly:
+If the context does not contain the answer, respond exactly:
 
 "I couldn't find relevant information in the HP support documents."
 
