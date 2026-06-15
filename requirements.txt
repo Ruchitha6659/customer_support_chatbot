@@ -9,6 +9,8 @@ langchain-huggingface==0.0.3
 langchain-text-splitters==0.2.4
 langchain-groq==0.1.9
 
+chromadb==0.5.3
+
 sentence-transformers
 --extra-index-url https://download.pytorch.org/whl/cpu
 torch
@@ -16,5 +18,5 @@ torch
 docx2txt
 pypdf
 python-docx
-protobuf==3.20.3
+protobuf>=3.20.3,<5.0.0
 watchdog==3.0.0
